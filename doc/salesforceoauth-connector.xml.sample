@@ -1,0 +1,3 @@
+<!-- BEGIN_INCLUDE(salesforceoauth:my-processor) -->
+    <salesforceoauth:my-processor/>
+<!-- END_INCLUDE(salesforceoauth:my-processor) -->

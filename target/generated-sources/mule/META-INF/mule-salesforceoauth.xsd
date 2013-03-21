@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:ns2="http://www.mulesoft.org/schema/mule/devkit" xmlns:mule="http://www.mulesoft.org/schema/mule/core" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" targetNamespace="http://www.mulesoft.org/schema/mule/salesforceoauth">
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace"></xs:import>
+  <xs:import schemaLocation="http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" namespace="http://www.springframework.org/schema/beans"></xs:import>
+  <xs:import schemaLocation="http://www.mulesoft.org/schema/mule/core/current/mule.xsd" namespace="http://www.mulesoft.org/schema/mule/core"></xs:import>
+  <xs:element xmlns:mule="http://www.mulesoft.org/schema/mule/core" name="config" substitutionGroup="mule:abstract-extension" ns2:javaClass="org.cookbook.adapters.salesforceoauthConnectorOAuth2Adapter">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="mule:abstractExtensionType">
+          <xs:annotation>
+            <xs:documentation>Cloud Connector</xs:documentation>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element name="oauth-callback-config" maxOccurs="1" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Config for http callbacks.</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:complexContent>
+                  <xs:extension base="mule:abstractExtensionType">
+                    <xs:attribute name="localPort" use="optional" type="xs:string"></xs:attribute>
+                    <xs:attribute name="remotePort" use="optional" type="xs:string"></xs:attribute>
+                    <xs:attribute name="domain" use="optional" type="xs:string"></xs:attribute>
+                    <xs:attribute name="async" default="false" use="optional" type="xs:boolean"></xs:attribute>
+                    <xs:attribute name="path" use="optional" type="xs:string"></xs:attribute>
+                    <xs:attribute name="connector-ref" use="optional" type="xs:string"></xs:attribute>
+                  </xs:extension>
+                </xs:complexContent>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="oauth-store-config" maxOccurs="1" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>Configuration element for storage of access tokens</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:complexContent>
+                  <xs:extension base="mule:abstractExtensionType">
+                    <xs:attribute name="objectStore-ref" use="required" type="xs:string"></xs:attribute>
+                  </xs:extension>
+                </xs:complexContent>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="name" use="optional" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Give a name to this configuration so it can be later referenced by config-ref.</xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+          <xs:attribute name="apiKey" use="required" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>API key</xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+          <xs:attribute name="apiSecret" use="required" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>API secret</xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+          <xs:attribute name="accessTokenUrl" default="https://login.salesforce.com/services/oauth2/token" use="optional" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The URL defined by the Service Provider to obtain an access token</xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+          <xs:attribute name="authorizationUrl" default="https://login.salesforce.com/services/oauth2/authorize" use="optional" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The URL defined by the Service Provider where the resource owner will be redirected to grant authorization to the connector</xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element xmlns="http://www.mulesoft.org/schema/mule/salesforceoauth" xmlns:mule="http://www.mulesoft.org/schema/mule/core" name="authorize" substitutionGroup="mule:abstract-message-processor" type="AuthorizeType">
+    <xs:annotation>
+      <xs:documentation>Starts OAuth authorization process. It must be called from a flow with an http:inbound-endpoint.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element xmlns="http://www.mulesoft.org/schema/mule/salesforceoauth" xmlns:mule="http://www.mulesoft.org/schema/mule/core" name="unauthorize" substitutionGroup="mule:abstract-message-processor" type="UnauthorizeType">
+    <xs:annotation>
+      <xs:documentation>Unauthorizes the connector, forcing to re-use authorize again before accessing any protected message processor.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="AuthorizeType">
+    <xs:complexContent>
+      <xs:extension xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:abstractMessageProcessorType">
+        <xs:attribute name="config-ref" use="optional" type="xs:string">
+          <xs:annotation>
+            <xs:documentation>Specify which configuration to use for this invocation.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="state" use="optional" type="xs:string">
+          <xs:annotation>
+            <xs:documentation>Any value that you wish to be sent with the callback</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="accessTokenUrl" use="optional" type="xs:string">
+          <xs:annotation>
+            <xs:documentation>The URL defined by the Service Provider to obtain an access token</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="authorizationUrl" use="optional" type="xs:string">
+          <xs:annotation>
+            <xs:documentation>The URL defined by the Service Provider where the resource owner will be redirected to grant authorization to the connector</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UnauthorizeType">
+    <xs:complexContent>
+      <xs:extension xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:abstractMessageProcessorType">
+        <xs:attribute name="accessTokenId" use="optional" type="xs:string">
+          <xs:annotation>
+            <xs:documentation>The id of the access token that will be used to authenticate the call</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="config-ref" use="optional" type="xs:string">
+          <xs:annotation>
+            <xs:documentation>Specify which configuration to use for this invocation.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns="http://www.mulesoft.org/schema/mule/salesforceoauth" xmlns:mule="http://www.mulesoft.org/schema/mule/core" name="my-processor" substitutionGroup="mule:abstract-message-processor" type="MyProcessorType">
+    <xs:annotation>
+      <xs:documentation>Custom processor</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="MyProcessorType">
+    <xs:complexContent>
+      <xs:extension xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:abstractMessageProcessorType">
+        <xs:attribute name="config-ref" use="optional" type="xs:string">
+          <xs:annotation>
+            <xs:documentation>Specify which configuration to use for this invocation.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="accessTokenId" use="optional" type="xs:string">
+          <xs:annotation>
+            <xs:documentation>The id of the access token that will be used to authenticate the call</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="integerType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:integer"></xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:propertyPlaceholderType"></xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="decimalType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:decimal"></xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:propertyPlaceholderType"></xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="floatType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:float"></xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:propertyPlaceholderType"></xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="doubleType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:double"></xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:propertyPlaceholderType"></xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="dateTimeType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:dateTime"></xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:propertyPlaceholderType"></xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="longType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:long"></xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:propertyPlaceholderType"></xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="byteType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:byte"></xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:propertyPlaceholderType"></xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="booleanType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:boolean"></xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:propertyPlaceholderType"></xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="anyUriType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:anyURI"></xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:propertyPlaceholderType"></xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="charType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="1"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:propertyPlaceholderType"></xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+</xs:schema>

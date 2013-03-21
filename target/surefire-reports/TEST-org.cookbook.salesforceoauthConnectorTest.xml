@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="0" time="2.687" errors="1" skipped="0" tests="1" name="org.cookbook.salesforceoauthConnectorTest">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.6.0_29\jre\bin"/>
+    <property name="java.vm.version" value="20.4-b02"/>
+    <property name="java.vm.vendor" value="Sun Microsystems Inc."/>
+    <property name="java.vendor.url" value="http://java.sun.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="Service Pack 1"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\Doug\Desktop\salesforceoauth"/>
+    <property name="java.runtime.version" value="1.6.0_29-b11"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.6.0_29\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\Doug\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 7"/>
+    <property name="classworlds.conf" value="C:\Program Files\apache-maven-3.0.4\bin\..\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.6.0_29\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\jdk1.6.0_29\bin;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Broadcom\Broadcom 802.11\Driver;C:\Program Files (x86)\Common Files\Roxio Shared\DLLShared\;C:\Program Files (x86)\Common Files\Roxio Shared\DLLShared\;C:\Program Files (x86)\Common Files\Roxio Shared\12.0\DLLShared\;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\Heroku\bin;C:\Program Files (x86)\ruby-1.9.3\bin;C:\Program Files (x86)\git\bin;C:\Program Files (x86)\git\cmd;c:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;c:\Program Files\Microsoft SQL Server\100\Tools\Binn\;c:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Python27;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Ruby193\bin;C:\RailsInstaller\Git\cmd;C:\RailsInstaller\Ruby1.9.3\bin;C:\Program Files\apache-maven-3.0.4\bin;C:\Program Files\Java\jdk1.6.0_29\bin;."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="50.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="6.1"/>
+    <property name="user.home" value="C:\Users\Doug"/>
+    <property name="user.timezone" value="America/Los_Angeles"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.specification.version" value="1.6"/>
+    <property name="user.name" value="Doug"/>
+    <property name="java.class.path" value="C:\Program Files\apache-maven-3.0.4\bin\..\boot\plexus-classworlds-2.4.jar"/>
+    <property name="java.vm.specification.version" value="1.0"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.6.0_29\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean package -Ddevkit.studio.package.skip=false"/>
+    <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.6.0_29"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.6.0_29\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.6.0_29\jre\lib\resources.jar;C:\Program Files\Java\jdk1.6.0_29\jre\lib\rt.jar;C:\Program Files\Java\jdk1.6.0_29\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.6.0_29\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.6.0_29\jre\lib\jce.jar;C:\Program Files\Java\jdk1.6.0_29\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.6.0_29\jre\lib\modules\jdk.boot.jar;C:\Program Files\Java\jdk1.6.0_29\jre\classes"/>
+    <property name="java.vendor" value="Sun Microsystems Inc."/>
+    <property name="maven.home" value="C:\Program Files\apache-maven-3.0.4\bin\.."/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="devkit.studio.package.skip" value="false"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase time="2.687" classname="org.cookbook.salesforceoauthConnectorTest" name="testFlow">
+    <error message="Could not find connector with name &apos;connector.http.mule.default&apos;" type="org.mule.api.lifecycle.LifecycleException">org.mule.api.lifecycle.LifecycleException: Could not find connector with name &apos;connector.http.mule.default&apos;
+	at org.mule.lifecycle.AbstractLifecycleManager.invokePhase(AbstractLifecycleManager.java:156)
+	at org.mule.construct.FlowConstructLifecycleManager.fireStartPhase(FlowConstructLifecycleManager.java:95)
+	at org.mule.construct.AbstractFlowConstruct.start(AbstractFlowConstruct.java:138)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.mule.lifecycle.phases.DefaultLifecyclePhase.applyLifecycle(DefaultLifecyclePhase.java:225)
+	at org.mule.lifecycle.RegistryLifecycleManager$RegistryLifecycleCallback.onTransition(RegistryLifecycleManager.java:276)
+	at org.mule.lifecycle.RegistryLifecycleManager.invokePhase(RegistryLifecycleManager.java:155)
+	at org.mule.lifecycle.RegistryLifecycleManager.fireLifecycle(RegistryLifecycleManager.java:126)
+	at org.mule.registry.AbstractRegistryBroker.fireLifecycle(AbstractRegistryBroker.java:80)
+	at org.mule.registry.MuleRegistryHelper.fireLifecycle(MuleRegistryHelper.java:120)
+	at org.mule.lifecycle.MuleContextLifecycleManager$MuleContextLifecycleCallback.onTransition(MuleContextLifecycleManager.java:94)
+	at org.mule.lifecycle.MuleContextLifecycleManager$MuleContextLifecycleCallback.onTransition(MuleContextLifecycleManager.java:90)
+	at org.mule.lifecycle.MuleContextLifecycleManager.invokePhase(MuleContextLifecycleManager.java:72)
+	at org.mule.lifecycle.MuleContextLifecycleManager.fireLifecycle(MuleContextLifecycleManager.java:64)
+	at org.mule.DefaultMuleContext.start(DefaultMuleContext.java:249)
+	at org.mule.tck.AbstractMuleTestCase.setUp(AbstractMuleTestCase.java:467)
+	at junit.framework.TestCase.runBare(TestCase.java:132)
+	at org.mule.tck.AbstractMuleTestCase.runBare(AbstractMuleTestCase.java:303)
+	at junit.framework.TestResult$1.protect(TestResult.java:110)
+	at junit.framework.TestResult.runProtected(TestResult.java:128)
+	at junit.framework.TestResult.run(TestResult.java:113)
+	at junit.framework.TestCase.run(TestCase.java:124)
+	at org.mule.tck.AbstractMuleTestCase.run(AbstractMuleTestCase.java:282)
+	at junit.framework.TestSuite.runTest(TestSuite.java:243)
+	at junit.framework.TestSuite.run(TestSuite.java:238)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: org.mule.api.DefaultMuleException: Could not find connector with name &apos;connector.http.mule.default&apos;
+	at org.cookbook.process.DefaultHttpCallback.createConnector(DefaultHttpCallback.java:313)
+	at org.cookbook.process.DefaultHttpCallback.createHttpInboundEndpoint(DefaultHttpCallback.java:321)
+	at org.cookbook.process.DefaultHttpCallback.start(DefaultHttpCallback.java:338)
+	at org.cookbook.processors.AuthorizeMessageProcessor.start(AuthorizeMessageProcessor.java:118)
+	at org.mule.processor.chain.AbstractMessageProcessorChain.start(AbstractMessageProcessorChain.java:90)
+	at org.mule.construct.AbstractFlowConstruct.startIfStartable(AbstractFlowConstruct.java:317)
+	at org.mule.construct.AbstractPipeline.doStart(AbstractPipeline.java:257)
+	at org.mule.construct.AbstractFlowConstruct$2.onTransition(AbstractFlowConstruct.java:143)
+	at org.mule.construct.AbstractFlowConstruct$2.onTransition(AbstractFlowConstruct.java:139)
+	at org.mule.lifecycle.AbstractLifecycleManager.invokePhase(AbstractLifecycleManager.java:141)
+	... 40 more
+</error>
+    <system-out>
+================================================================================
+= Testing: testFlow                                                            =
+================================================================================
+[03-21 11:23:06] ERROR DefaultHttpCallback [main]: Could not find connector with name &apos;connector.http.mule.default&apos;
+</system-out>
+  </testcase>
+</testsuite>
