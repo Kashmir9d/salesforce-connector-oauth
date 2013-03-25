@@ -16,7 +16,7 @@ import org.mule.config.i18n.MessageFactory;
 import org.mule.transformer.TransformerTemplate;
 import org.mule.transport.NullPayload;
 
-@Generated(value = "Mule DevKit Version 3.3.2", date = "2013-03-21T11:22:52-07:00", comments = "Build UNNAMED.1377.fd7d4f9")
+@Generated(value = "Mule DevKit Version 3.3.2", date = "2013-03-25T12:03:30-07:00", comments = "Build UNNAMED.1377.fd7d4f9")
 public abstract class AbstractMessageProcessor<O >
     extends AbstractConnectedProcessor
     implements FlowConstructAware, MuleContextAware

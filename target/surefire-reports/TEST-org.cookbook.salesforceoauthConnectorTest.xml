@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="2.687" errors="1" skipped="0" tests="1" name="org.cookbook.salesforceoauthConnectorTest">
+<testsuite failures="0" time="6.523" errors="1" skipped="0" tests="1" name="org.cookbook.salesforceoauthConnectorTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.6.0_29\jre\bin"/>
@@ -60,7 +60,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="2.687" classname="org.cookbook.salesforceoauthConnectorTest" name="testFlow">
+  <testcase time="6.523" classname="org.cookbook.salesforceoauthConnectorTest" name="testFlow">
     <error message="Could not find connector with name &apos;connector.http.mule.default&apos;" type="org.mule.api.lifecycle.LifecycleException">org.mule.api.lifecycle.LifecycleException: Could not find connector with name &apos;connector.http.mule.default&apos;
 	at org.mule.lifecycle.AbstractLifecycleManager.invokePhase(AbstractLifecycleManager.java:156)
 	at org.mule.construct.FlowConstructLifecycleManager.fireStartPhase(FlowConstructLifecycleManager.java:95)
@@ -120,7 +120,7 @@ Caused by: org.mule.api.DefaultMuleException: Could not find connector with name
 ================================================================================
 = Testing: testFlow                                                            =
 ================================================================================
-[03-21 11:23:06] ERROR DefaultHttpCallback [main]: Could not find connector with name &apos;connector.http.mule.default&apos;
+[03-25 12:03:53] ERROR DefaultHttpCallback [main]: Could not find connector with name &apos;connector.http.mule.default&apos;
 </system-out>
   </testcase>
 </testsuite>

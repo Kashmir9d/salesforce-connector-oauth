@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: org.cookbook.salesforceoauthConnectorTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.9 sec <<< FAILURE!
-testFlow(org.cookbook.salesforceoauthConnectorTest)  Time elapsed: 2687 sec  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 7.365 sec <<< FAILURE!
+testFlow(org.cookbook.salesforceoauthConnectorTest)  Time elapsed: 6523 sec  <<< ERROR!
 org.mule.api.lifecycle.LifecycleException: Could not find connector with name 'connector.http.mule.default'
 	at org.mule.lifecycle.AbstractLifecycleManager.invokePhase(AbstractLifecycleManager.java:156)
 	at org.mule.construct.FlowConstructLifecycleManager.fireStartPhase(FlowConstructLifecycleManager.java:95)
