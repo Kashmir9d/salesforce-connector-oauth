@@ -1,0 +1,3 @@
+<!-- BEGIN_INCLUDE(salesforceoauth:retrieve-contact) -->
+    <salesforceoauth:retrieve-contact/>
+<!-- END_INCLUDE(salesforceoauth:retrieve-contact) -->

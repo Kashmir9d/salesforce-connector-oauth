@@ -11,7 +11,7 @@ import org.mule.api.lifecycle.Startable;
 import org.mule.api.lifecycle.Stoppable;
 import org.mule.api.store.ObjectStoreException;
 
-@Generated(value = "Mule DevKit Version 3.3.2", date = "2013-03-25T12:28:48-07:00", comments = "Build UNNAMED.1377.fd7d4f9")
+@Generated(value = "Mule DevKit Version 3.3.2", date = "2013-03-25T02:10:12-07:00", comments = "Build UNNAMED.1377.fd7d4f9")
 public class salesforceoauthConnectorOAuthClientFactory implements KeyedPoolableObjectFactory
 {
 
@@ -39,6 +39,7 @@ public class salesforceoauthConnectorOAuthClientFactory implements KeyedPoolable
         connector.setAuthorizationUrl(state.getAuthorizationUrl());
         connector.setAccessTokenUrl(state.getAccessTokenUrl());
         connector.setRefreshToken(state.getRefreshToken());
+        connector.setUserId(state.getUserId());
         if (connector instanceof Initialisable) {
             ((Initialisable) connector).initialise();
         }
@@ -131,6 +132,7 @@ public class salesforceoauthConnectorOAuthClientFactory implements KeyedPoolable
         state.setAccessTokenUrl(((salesforceoauthConnectorOAuth2Adapter) obj).getAccessTokenUrl());
         state.setAuthorizationUrl(((salesforceoauthConnectorOAuth2Adapter) obj).getAuthorizationUrl());
         state.setRefreshToken(((salesforceoauthConnectorOAuth2Adapter) obj).getRefreshToken());
+        state.setUserId(((salesforceoauthConnectorOAuth2Adapter) obj).getUserId());
         oauthManager.getAccessTokenObjectStore().store(((String) key), state);
     }
 

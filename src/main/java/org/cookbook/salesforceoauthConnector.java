@@ -55,9 +55,12 @@ public class salesforceoauthConnector
      */
     private PartnerConnection connection;
     
+    @OAuthCallbackParameter(expression = "#[json:id]")
+    private String userId;
+    
     @OAuthAccessTokenIdentifier
     public String getAccessId() { 
-    		return accessToken; 
+    		return userId; 
     }
     
     
@@ -133,5 +136,13 @@ public class salesforceoauthConnector
 	
 	public String getAccessToken(){
 		return this.accessToken;
+	}
+	
+	public void setUserId(String id){
+		this.userId = id;
+	}
+	
+	public String getUserId(){
+		return userId;
 	}
 }

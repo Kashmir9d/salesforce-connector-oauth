@@ -219,7 +219,7 @@
         <dependency>
         	<groupId>salesforce</groupId>
         	<artifactId>wsc</artifactId>
-        	<version>22</version>
+        	<version>23</version>
         </dependency>
     </dependencies>
 

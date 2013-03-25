@@ -14,7 +14,7 @@ import org.mule.api.process.ProcessTemplate;
 import org.mule.api.processor.MessageProcessor;
 import org.mule.api.routing.filter.Filter;
 
-@Generated(value = "Mule DevKit Version 3.3.2", date = "2013-03-25T12:28:48-07:00", comments = "Build UNNAMED.1377.fd7d4f9")
+@Generated(value = "Mule DevKit Version 3.3.2", date = "2013-03-25T02:10:12-07:00", comments = "Build UNNAMED.1377.fd7d4f9")
 public class ManagedAccessTokenProcessTemplate<P >implements ProcessTemplate<P, salesforceoauthConnectorOAuth2Adapter>
 {
 

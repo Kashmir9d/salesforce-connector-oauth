@@ -15,8 +15,11 @@ import javax.annotation.Generated;
 import org.apache.log4j.Logger;
 import org.cookbook.oauth.OAuthProcessTemplate;
 import org.cookbook.salesforceoauthConnector;
+import org.mule.DefaultMuleMessage;
 import org.mule.api.MuleContext;
+import org.mule.api.MuleMessage;
 import org.mule.api.context.MuleContextAware;
+import org.mule.api.expression.ExpressionManager;
 import org.mule.api.lifecycle.Initialisable;
 import org.mule.api.lifecycle.InitialisationException;
 import org.mule.api.lifecycle.Startable;
@@ -34,7 +37,7 @@ import org.mule.util.IOUtils;
  * A {@code salesforceoauthConnectorOAuth2Adapter} is a wrapper around {@link salesforceoauthConnector } that adds OAuth capabilites to the pojo.
  * 
  */
-@Generated(value = "Mule DevKit Version 3.3.2", date = "2013-03-25T12:28:48-07:00", comments = "Build UNNAMED.1377.fd7d4f9")
+@Generated(value = "Mule DevKit Version 3.3.2", date = "2013-03-25T02:10:12-07:00", comments = "Build UNNAMED.1377.fd7d4f9")
 public class salesforceoauthConnectorOAuth2Adapter
     extends salesforceoauthConnectorProcessAdapter
     implements MuleContextAware, Initialisable, Startable, Stoppable, OAuth2Adapter
@@ -390,6 +393,7 @@ public class salesforceoauthConnectorOAuth2Adapter
                             LOGGER.debug(messageStringBuilder.toString());
                         }
                     }
+                    fetchCallbackParameters(response);
                     postAuthorize();
                 } else {
                     throw new Exception(String.format("OAuth access token could not be extracted from: %s", response));
@@ -398,6 +402,12 @@ public class salesforceoauthConnectorOAuth2Adapter
                 throw new RuntimeException(e);
             }
         }
+    }
+
+    private void fetchCallbackParameters(String response) {
+        ExpressionManager expressionManager = muleContext.getExpressionManager();
+        MuleMessage muleMessage = new DefaultMuleMessage(response, muleContext);
+        setUserId(((String) expressionManager.evaluate("#[json:id]", muleMessage)));
     }
 
     public boolean hasTokenExpired() {

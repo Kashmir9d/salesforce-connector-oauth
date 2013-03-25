@@ -25,7 +25,7 @@ import org.mule.api.processor.InterceptingMessageProcessor;
 import org.mule.api.processor.MessageProcessor;
 import org.mule.config.i18n.CoreMessages;
 
-@Generated(value = "Mule DevKit Version 3.3.2", date = "2013-03-25T12:28:48-07:00", comments = "Build UNNAMED.1377.fd7d4f9")
+@Generated(value = "Mule DevKit Version 3.3.2", date = "2013-03-25T02:10:12-07:00", comments = "Build UNNAMED.1377.fd7d4f9")
 public class AuthorizeMessageProcessor
     extends AbstractMessageProcessor<salesforceoauthConnectorOAuthManager>
     implements FlowConstructAware, MuleContextAware, Initialisable, Startable, Stoppable, InterceptingMessageProcessor

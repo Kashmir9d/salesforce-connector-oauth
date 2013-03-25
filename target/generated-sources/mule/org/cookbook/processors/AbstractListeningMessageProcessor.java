@@ -13,7 +13,7 @@ import org.mule.api.MuleMessage;
 import org.mule.api.callback.SourceCallback;
 import org.mule.api.processor.MessageProcessor;
 
-@Generated(value = "Mule DevKit Version 3.3.2", date = "2013-03-25T12:28:48-07:00", comments = "Build UNNAMED.1377.fd7d4f9")
+@Generated(value = "Mule DevKit Version 3.3.2", date = "2013-03-25T02:10:12-07:00", comments = "Build UNNAMED.1377.fd7d4f9")
 public abstract class AbstractListeningMessageProcessor<O >
     extends AbstractMessageProcessor<O>
     implements SourceCallback

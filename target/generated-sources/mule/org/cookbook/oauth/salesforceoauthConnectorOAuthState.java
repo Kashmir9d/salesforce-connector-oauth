@@ -10,7 +10,7 @@ import org.cookbook.salesforceoauthConnector;
  * Serializable class used to save and restore OAuth state from {@link salesforceoauthConnector }
  * 
  */
-@Generated(value = "Mule DevKit Version 3.3.2", date = "2013-03-25T12:28:48-07:00", comments = "Build UNNAMED.1377.fd7d4f9")
+@Generated(value = "Mule DevKit Version 3.3.2", date = "2013-03-25T02:10:12-07:00", comments = "Build UNNAMED.1377.fd7d4f9")
 public class salesforceoauthConnectorOAuthState implements Serializable
 {
 
@@ -18,6 +18,7 @@ public class salesforceoauthConnectorOAuthState implements Serializable
     public String authorizationUrl;
     public String accessTokenUrl;
     public String refreshToken;
+    public String userId;
 
     /**
      * Retrieves accessToken
@@ -85,6 +86,23 @@ public class salesforceoauthConnectorOAuthState implements Serializable
      */
     public void setRefreshToken(String value) {
         this.refreshToken = value;
+    }
+
+    /**
+     * Retrieves userId
+     * 
+     */
+    public String getUserId() {
+        return this.userId;
+    }
+
+    /**
+     * Sets userId
+     * 
+     * @param value Value to set
+     */
+    public void setUserId(String value) {
+        this.userId = value;
     }
 
 }
