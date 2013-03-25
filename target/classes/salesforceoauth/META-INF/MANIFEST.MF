@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: 
 Bundle-SymbolicName: org.mule.tooling.ui.contribution.salesforceoauth;singleton:=true
-Bundle-Version: 1.0.0.201303251203
+Bundle-Version: 1.0.0.201303251228
 Bundle-Activator: org.mule.tooling.ui.contribution.SalesforceoauthActivator
 Bundle-Vendor: MuleSoft, Inc.
 Require-Bundle: org.eclipse.ui,

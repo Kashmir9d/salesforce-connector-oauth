@@ -57,7 +57,7 @@ public class salesforceoauthConnector
     
     @OAuthAccessTokenIdentifier
     public String getAccessId() { 
-    return accessToken; 
+    		return accessToken; 
     }
     
     
@@ -85,7 +85,7 @@ public class salesforceoauthConnector
 	 /**
      * Custom processor
      *
-     * {@sample.xml ../../../doc/salesforceoauth-connector.xml.sample salesforceoauth:my-processor}
+     * {@sample.xml ../../../doc/salesforce-oauth-connector.xml.sample salesforceoauth:retrieve-contact}
      * @return Some string
      * @throws Exception throws a Salesforce WSConnectionException on issues with the connection
 	 * 
@@ -93,7 +93,7 @@ public class salesforceoauthConnector
 
     @Processor
     @OAuthProtected
-    public Map<String, Object> myProcessor() throws Exception
+    public Map<String, Object> retrieveContact() throws Exception
     {
     		if (connection == null){
     			ConnectorConfig config = new ConnectorConfig();

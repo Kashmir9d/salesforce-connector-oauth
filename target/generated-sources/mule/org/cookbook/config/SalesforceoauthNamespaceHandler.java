@@ -9,7 +9,7 @@ import org.springframework.beans.factory.xml.NamespaceHandlerSupport;
  * Registers bean definitions parsers for handling elements in <code>http://www.mulesoft.org/schema/mule/salesforceoauth</code>.
  * 
  */
-@Generated(value = "Mule DevKit Version 3.3.2", date = "2013-03-25T12:03:30-07:00", comments = "Build UNNAMED.1377.fd7d4f9")
+@Generated(value = "Mule DevKit Version 3.3.2", date = "2013-03-25T12:28:48-07:00", comments = "Build UNNAMED.1377.fd7d4f9")
 public class SalesforceoauthNamespaceHandler
     extends NamespaceHandlerSupport
 {
@@ -24,7 +24,7 @@ public class SalesforceoauthNamespaceHandler
         registerBeanDefinitionParser("config", new salesforceoauthConnectorConfigDefinitionParser());
         registerBeanDefinitionParser("authorize", new AuthorizeDefinitionParser());
         registerBeanDefinitionParser("unauthorize", new UnauthorizeDefinitionParser());
-        registerBeanDefinitionParser("my-processor", new MyProcessorDefinitionParser());
+        registerBeanDefinitionParser("retrieve-contact", new RetrieveContactDefinitionParser());
     }
 
 }

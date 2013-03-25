@@ -34,7 +34,7 @@
         <modeSwitch alwaysCombo="true" description="Operation." caption="Operation" name="Salesforceoauth operations to execute">
           <mode modeLabel="Authorize" modeId="http://www.mulesoft.org/schema/mule/salesforceoauth/authorize"></mode>
           <mode modeLabel="Unauthorize" modeId="http://www.mulesoft.org/schema/mule/salesforceoauth/unauthorize"></mode>
-          <mode modeLabel="My processor" modeId="http://www.mulesoft.org/schema/mule/salesforceoauth/my-processor"></mode>
+          <mode modeLabel="Retrieve contact" modeId="http://www.mulesoft.org/schema/mule/salesforceoauth/retrieve-contact"></mode>
         </modeSwitch>
       </group>
     </attribute-category>
@@ -48,7 +48,7 @@
       </group>
     </attribute-category>
   </cloud-connector>
-  <cloud-connector returnType="java.util.Map&lt;java.lang.String,java.lang.Object&gt;" extends="http://www.mulesoft.org/schema/mule/salesforceoauth/abstractSalesforceoauthConnectorGeneric" abstract="true" image="icons/large/salesforceoauth-connector-48x32.png" localId="my-processor" icon="icons/small/salesforceoauth-connector-24x16.png" caption="My Processor">
+  <cloud-connector returnType="java.util.Map&lt;java.lang.String,java.lang.Object&gt;" extends="http://www.mulesoft.org/schema/mule/salesforceoauth/abstractSalesforceoauthConnectorGeneric" abstract="true" image="icons/large/salesforceoauth-connector-48x32.png" localId="retrieve-contact" icon="icons/small/salesforceoauth-connector-24x16.png" caption="Retrieve Contact">
     <attribute-category description="General." caption="General">
       <group caption="General" id="general">
         <string required="false" description="The id of the access token that will be used to authenticate the call." caption="Access Token Id" name="accessTokenId"></string>

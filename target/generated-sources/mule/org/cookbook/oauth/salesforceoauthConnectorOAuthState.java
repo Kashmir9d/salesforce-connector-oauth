@@ -10,7 +10,7 @@ import org.cookbook.salesforceoauthConnector;
  * Serializable class used to save and restore OAuth state from {@link salesforceoauthConnector }
  * 
  */
-@Generated(value = "Mule DevKit Version 3.3.2", date = "2013-03-25T12:03:30-07:00", comments = "Build UNNAMED.1377.fd7d4f9")
+@Generated(value = "Mule DevKit Version 3.3.2", date = "2013-03-25T12:28:48-07:00", comments = "Build UNNAMED.1377.fd7d4f9")
 public class salesforceoauthConnectorOAuthState implements Serializable
 {
 

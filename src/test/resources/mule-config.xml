@@ -26,7 +26,8 @@
 
     <flow name="testFlow">
     	<salesforceoauth:authorize/>
-        <salesforceoauth:my-processor/>
+    	<echo-component/>
+        <salesforceoauth:retrieve-contact/>
     </flow>
 
 </mule>
