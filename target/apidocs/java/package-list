@@ -1,8 +1,0 @@
-org.cookbook
-org.cookbook.adapters
-org.cookbook.agents
-org.cookbook.config
-org.cookbook.oauth
-org.cookbook.process
-org.cookbook.processors
-

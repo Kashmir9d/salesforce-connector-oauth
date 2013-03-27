@@ -24,11 +24,7 @@ public class salesforceoauthConnectorTest extends FunctionalTestCase
     @Test
     public void testFlow() throws Exception
     {
-    	Map<String, Object> expect = new HashMap<String, Object>();
-    	expect.put("FirstName", "Edna");
-    	expect.put("Id", "003E000000EgZvnIAF");
-    	expect.put("LastName", "Frank");
-        runFlowAndExpect("testFlow", expect);
+        runFlowAndExpect("testFlow", "expected-value");
     }
 
     /**

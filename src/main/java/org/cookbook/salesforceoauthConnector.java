@@ -9,6 +9,8 @@ import java.util.Map;
 import org.mule.api.annotations.Configurable;
 import org.mule.api.annotations.Processor;
 import org.mule.api.annotations.oauth.*;
+import org.mule.api.annotations.param.Default;
+import org.mule.api.annotations.param.Optional;
 
 import com.sforce.soap.partner.Connector;
 import com.sforce.soap.partner.DescribeSObjectResult;
@@ -89,6 +91,8 @@ public class salesforceoauthConnector
      * Custom processor
      *
      * {@sample.xml ../../../doc/salesforce-oauth-connector.xml.sample salesforceoauth:retrieve-contact}
+     * 
+     * @param lastName the last name of the account to look up
      * @return Some string
      * @throws Exception throws a Salesforce WSConnectionException on issues with the connection
 	 * 
@@ -96,7 +100,7 @@ public class salesforceoauthConnector
 
     @Processor
     @OAuthProtected
-    public Map<String, Object> retrieveContact() throws Exception
+    public Map<String, Object> retrieveContact(@Optional @Default("") String lastName) throws Exception
     {
     		if (connection == null){
     			ConnectorConfig config = new ConnectorConfig();
@@ -104,8 +108,15 @@ public class salesforceoauthConnector
        	 		this.connection = Connector.newConnection(config);
     		}
     	
-			QueryResult queryResults = connection.query("SELECT Id, FirstName, LastName, Account.Name " +
-					            "FROM Contact WHERE AccountId != NULL ORDER BY CreatedDate ASC LIMIT 1");
+			QueryResult queryResults;
+			if (lastName != null && !lastName.isEmpty()){
+				queryResults = connection.query("SELECT Id, FirstName, LastName, Account.Name " +
+						"FROM Contact WHERE AccountId != NULL AND lastName == " + lastName + " ORDER BY CreatedDate ASC LIMIT 1");
+
+			} else{
+				queryResults = connection.query("SELECT Id, FirstName, LastName, Account.Name " +
+						"FROM Contact WHERE AccountId != NULL ORDER BY CreatedDate ASC LIMIT 1");
+			}
 			SObject[] records = queryResults.getRecords();
 			if (records.length > 0){
 				return this.sObjectToMap(records[0]);

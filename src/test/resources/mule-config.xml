@@ -17,17 +17,8 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd 
 		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd ">
 
-	
-    <salesforceoauth:config apiKey="3MVG9y6x0357Hlef6xEZ6s0azfKKZxmBcgMbnLOpw8s1Ms2fC2evKXtpi0cs_hSsAamcBidF0BINVWTo8bIro"
-     apiSecret="634397704277671175">
-     	 <salesforceoauth:oauth-callback-config domain="localhost" localPort="8081" remotePort="8081" path="oauthcallback"/>
-     	 <salesforceoauth:oauth-store-config objectStore-ref="_defaultInMemoryObjectStore"/>
-     </salesforceoauth:config>
-
     <flow name="testFlow">
-    	<salesforceoauth:authorize/>
-    	<echo-component/>
-        <salesforceoauth:retrieve-contact/>
+		<echo-component/>
     </flow>
 
 </mule>
